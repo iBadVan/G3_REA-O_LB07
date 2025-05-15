@@ -105,4 +105,9 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         }
     }
 
+    @Override
+    public boolean isEmpty() {
+        return root == null;
+    }
+
 }
