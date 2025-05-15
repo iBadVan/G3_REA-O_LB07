@@ -246,5 +246,10 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return null;
     }
 
-    
+    //Metodo de ALTURA
+    public int height(E x) {
+        Node subRoot = findNodeIterative(x);
+        if (subRoot == null) return -1;
+        return heightIterative(subRoot);
+    }
 }
