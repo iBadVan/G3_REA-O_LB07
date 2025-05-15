@@ -278,5 +278,11 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         }
         return countNodesAtLevel(root, nivel);
     }
+    //contar cant nodos segun nivel
+    private int countNodesAtLevel(Node node, int nivel) {
+        if (node == null) return 0;
+        if (nivel == 0) return 1;
+        return countNodesAtLevel(node.left, nivel - 1) + countNodesAtLevel(node.right, nivel - 1);
+    }
 
 }
