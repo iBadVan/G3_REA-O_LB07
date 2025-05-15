@@ -215,4 +215,15 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return 1 + countAllNodes(node.left) + countAllNodes(node.right);
     }
 
+    //CONTAR SIN HOJAS
+    public int countNodes() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("El árbol está vacío.");
+        return countNodes(root);
+    }
+
+    private int countNodes(Node node) {
+        if (node == null) return 0;
+        if (node.left == null && node.right == null) return 0;
+        return 1 + countNodes(node.left) + countNodes(node.right);
+    }
 }
