@@ -293,4 +293,23 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return hojas * altura;
     }
 
+    //CONTAR NODOS POR HOJA ITERATIVO
+    private int countLeafNodesIterative() {
+        if (root == null) return 0;
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        int count = 0;
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            if (current.left == null && current.right == null) {
+                count++;
+            }
+            if (current.left != null) queue.offer(current.left);
+            if (current.right != null) queue.offer(current.right);
+        }
+        return count;
+    }
+
 }
