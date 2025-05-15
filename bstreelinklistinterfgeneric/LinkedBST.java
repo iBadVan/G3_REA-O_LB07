@@ -269,4 +269,14 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         }
         return height;
     }
+
+    //ENCONTRAR AMPLITUD
+    public int amplitude(int nivel) {
+        int h = height(root.data);  
+        if (nivel < 0 || nivel > h) {
+            return 0; 
+        }
+        return countNodesAtLevel(root, nivel);
+    }
+
 }
