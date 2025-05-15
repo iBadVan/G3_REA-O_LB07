@@ -46,7 +46,23 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return node;
     }
 
-    
+    @Override
+    public E search(E data) throws ItemNoFound {
+        return search(data, root);
+    }
+
+    private E search(E data, Node node) throws ItemNoFound {
+        if (node == null)
+            throw new ItemNoFound("Elemento no encontrado: " + data);
+        int cmp = data.compareTo(node.data);
+        if (cmp < 0)
+            return search(data, node.left);
+        else if (cmp > 0)
+            return search(data, node.right);
+        else
+            return node.data;
+    }
+
 
 
 }
