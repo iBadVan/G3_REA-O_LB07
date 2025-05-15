@@ -196,4 +196,12 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return search(current.data);
     }
 
+    //METODO PARA ELIMINAR ALL IN
+    public void destroyNodes() throws ExceptionIsEmpty {
+        if (isEmpty()) {
+            throw new ExceptionIsEmpty("El árbol está vacío, no hay nodos para eliminar.");
+        }
+        root = null; 
+    }
+
 }
