@@ -205,6 +205,10 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
     }
 
     //CONTAR TODOS LOS NODOS
+    public int countAllNodes() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("El árbol está vacío.");
+        return countAllNodes(root);
+    }
 
     private int countAllNodes(Node node) {
         if (node == null) return 0;
