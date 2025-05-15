@@ -204,4 +204,11 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         root = null; 
     }
 
+    //CONTAR TODOS LOS NODOS
+
+    private int countAllNodes(Node node) {
+        if (node == null) return 0;
+        return 1 + countAllNodes(node.left) + countAllNodes(node.right);
+    }
+
 }
