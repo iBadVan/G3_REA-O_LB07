@@ -285,4 +285,12 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return countNodesAtLevel(node.left, nivel - 1) + countNodesAtLevel(node.right, nivel - 1);
     }
 
+    //CALCULAR AREA BST
+    public int areaBST() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("El árbol está vacío.");
+        int altura = height(root.data); 
+        int hojas = countLeafNodesIterative();
+        return hojas * altura;
+    }
+
 }
