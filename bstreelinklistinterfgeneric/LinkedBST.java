@@ -21,4 +21,14 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
             this.right = right;
         }
     }
+
+    private Node root;
+
+    public LinkedBST() {
+        this.root = null;
+    }
+
+    
+
+
 }
