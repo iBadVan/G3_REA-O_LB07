@@ -3,6 +3,10 @@ package bstreelinklistinterfgeneric;
 import bstreeInterface.BinarySearchTree;
 import Exceptions.ItemDuplicated;
 import Exceptions.ItemNoFound;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 import Exceptions.ExceptionIsEmpty;
 
 public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
@@ -226,4 +230,21 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         if (node.left == null && node.right == null) return 0;
         return 1 + countNodes(node.left) + countNodes(node.right);
     }
+
+    //Encontrar nodo x iterativo
+
+    private Node findNodeIterative(E x) {
+        if (root == null) return null;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            if (current.data.equals(x)) return current;
+            if (current.left != null) queue.offer(current.left);
+            if (current.right != null) queue.offer(current.right);
+        }
+        return null;
+    }
+
+    
 }
