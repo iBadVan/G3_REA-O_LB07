@@ -39,7 +39,35 @@ public class Prueba {
             System.out.println("Error: " + e.getMessage());
         }
 
+        LinkedBST<Integer> bst1 = new LinkedBST<>();
+        LinkedBST<Integer> bst2 = new LinkedBST<>();
 
+        try {
+            // Insertar datos en bst1
+            bst1.insert(50);
+            bst1.insert(30);
+            bst1.insert(70);
+            bst1.insert(20);
+            bst1.insert(40);
+            bst1.insert(60);
+            bst1.insert(80);
+
+            // Insertar datos en bst2
+            bst2.insert(15);
+            bst2.insert(10);
+            bst2.insert(25);
+            bst2.insert(5);
+            bst2.insert(12);
+            bst2.insert(22);
+            bst2.insert(27);
+
+            // Comparar áreas
+            boolean result = sameArea(bst1, bst2);
+            System.out.println("¿Los árboles tienen la misma área? " + result);
+
+        } catch (ItemDuplicated e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
     }
 }
