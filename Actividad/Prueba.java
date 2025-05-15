@@ -18,5 +18,10 @@ LinkedBST<Integer> bst = new LinkedBST<>();
         bst.showInOrder();    
         bst.showPreOrder();   
         bst.showPostOrder();  
+
+        
+        System.out.println("Mínimo del árbol: " + bst.findMin()); // Esperado: 50
+        System.out.println("Máximo del árbol: " + bst.findMax()); // Esperado: 700
+
     }
 }
