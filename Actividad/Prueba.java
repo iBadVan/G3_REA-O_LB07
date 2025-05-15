@@ -15,5 +15,8 @@ LinkedBST<Integer> bst = new LinkedBST<>();
         } catch (ItemDuplicated e) {
             System.out.println("Error al insertar: " + e.getMessage());
         }
+        bst.showInOrder();    
+        bst.showPreOrder();   
+        bst.showPostOrder();  
     }
 }
