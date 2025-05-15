@@ -90,4 +90,19 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return node;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        inOrder(root, sb);
+        return sb.toString().trim();
+    }
+
+    private void inOrder(Node node, StringBuilder sb) {
+        if (node != null) {
+            inOrder(node.left, sb);
+            sb.append(node.data).append(" ");
+            inOrder(node.right, sb);
+        }
+    }
+
 }
