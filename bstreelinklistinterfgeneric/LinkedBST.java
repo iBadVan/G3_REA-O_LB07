@@ -173,7 +173,6 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         while (current.left != null) {
             current = current.left;
         }
-        // Validar con search()
         return search(current.data);
     }
 
@@ -194,7 +193,6 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         while (current.right != null) {
             current = current.right;
         }
-        // Validar con search()
         return search(current.data);
     }
 
