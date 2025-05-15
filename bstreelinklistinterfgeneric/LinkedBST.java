@@ -110,4 +110,21 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return root == null;
     }
 
+
+    //INORDEN
+    public void showInOrder() {
+    System.out.print("In-Orden: ");
+    inOrder(root);
+    System.out.println();
+    }
+
+    private void inOrder(Node node) {
+        if (node != null) {
+            inOrder(node.left);
+            System.out.print(node.data + " ");
+            inOrder(node.right);
+        }
+    }
+
+
 }
