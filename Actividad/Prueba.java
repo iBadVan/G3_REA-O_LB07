@@ -6,7 +6,7 @@ import Exceptions.ItemNoFound;
 
 public class Prueba {
     public static void main(String[] args) {
-LinkedBST<Integer> bst = new LinkedBST<>();
+        LinkedBST<Integer> bst = new LinkedBST<>();
         int[] datos = {400, 100, 700, 50, 200, 75};
 
         try {
