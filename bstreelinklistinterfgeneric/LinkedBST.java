@@ -232,7 +232,6 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
     }
 
     //Encontrar nodo x iterativo
-
     private Node findNodeIterative(E x) {
         if (root == null) return null;
         Queue<Node> queue = new LinkedList<>();
@@ -251,5 +250,23 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         Node subRoot = findNodeIterative(x);
         if (subRoot == null) return -1;
         return heightIterative(subRoot);
+    }
+
+    //Calculo iterativo de ALTURA
+    private int heightIterative(Node node) {
+        if (node == null) return -1;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        int height = -1;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            height++;
+            for (int i = 0; i < size; i++) {
+                Node current = queue.poll();
+                if (current.left != null) queue.offer(current.left);
+                if (current.right != null) queue.offer(current.right);
+            }
+        }
+        return height;
     }
 }
