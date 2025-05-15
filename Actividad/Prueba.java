@@ -69,5 +69,22 @@ public class Prueba {
             System.out.println("Error: " + e.getMessage());
         }
 
+        LinkedBST<Integer> elarbol2 = new LinkedBST<>();
+        try {
+            elarbol2.insert(50);
+            elarbol2.insert(30);
+            elarbol2.insert(70);
+            elarbol2.insert(20);
+            elarbol2.insert(40);
+            elarbol2.insert(60);
+            elarbol2.insert(80);
+
+            System.out.println("Representación del BST con parenthesize:");
+            elarbol2.parenthesize();
+
+        } catch (ItemDuplicated e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
     }
 }
