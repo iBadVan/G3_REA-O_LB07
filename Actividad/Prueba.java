@@ -2,6 +2,7 @@ package Actividad;
 
 import bstreelinklistinterfgeneric.LinkedBST;
 import Exceptions.ItemDuplicated;
+import Exceptions.ItemNoFound;
 
 public class Prueba {
     public static void main(String[] args) {
@@ -19,9 +20,12 @@ LinkedBST<Integer> bst = new LinkedBST<>();
         bst.showPreOrder();   
         bst.showPostOrder();  
 
-        
+        try {
         System.out.println("Mínimo del árbol: " + bst.findMin()); // Esperado: 50
         System.out.println("Máximo del árbol: " + bst.findMax()); // Esperado: 700
+        } catch (ItemNoFound e){
+            System.out.println("Error: " + e.getMessage());
+        }
 
     }
 }
