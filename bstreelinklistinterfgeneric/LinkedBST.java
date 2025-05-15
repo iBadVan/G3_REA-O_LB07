@@ -312,4 +312,49 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         return count;
     }
 
+    //IMPRIMIR ARBOL
+
+    public void drawBST() {
+        if (root == null) {
+            System.out.println("[Árbol vacío]");
+            return;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            StringBuilder levelStr = new StringBuilder();
+            StringBuilder connections = new StringBuilder();
+
+            for (int i = 0; i < levelSize; i++) {
+                Node current = queue.poll();
+                levelStr.append(current.data);
+
+                if (current.left != null) {
+                    connections.append(" | ");
+                    queue.offer(current.left);
+                } else {
+                    connections.append("   ");
+                }
+
+                if (current.right != null) {
+                    connections.append(" | ");
+                    queue.offer(current.right);
+                } else {
+                    connections.append("   ");
+                }
+
+                if (i < levelSize -1) {
+                    levelStr.append("   "); 
+                    connections.append("   ");
+                }
+            }
+
+            System.out.println(levelStr.toString());
+            System.out.println(connections.toString());
+        }
+    }
+
 }
