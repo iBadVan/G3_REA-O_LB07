@@ -357,4 +357,41 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
         }
     }
 
+    //INICIO 
+    public void parenthesize() {
+        parenthesize(root, 0);
+    }
+
+    //METODO RECURSIVO
+    private void parenthesize(Node node, int indentLevel) {
+        if (node == null) return;
+
+        printIndent(indentLevel);
+        System.out.println(node.data);
+
+        if (node.left != null || node.right != null) {
+            printIndent(indentLevel);
+            System.out.println("(");
+
+            if (node.left != null) {
+                parenthesize(node.left, indentLevel + 1);
+            }
+
+            if (node.right != null) {
+                parenthesize(node.right, indentLevel + 1);
+            }
+
+            printIndent(indentLevel);
+            System.out.println(")");
+        }
+    }   
+
+
+    //METODO DE IMPRESION
+    private void printIndent(int level) {
+        for (int i = 0; i < level; i++) {
+            System.out.print("    "); 
+        }
+    }
+
 }
